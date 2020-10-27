@@ -1,0 +1,15 @@
+.titulo_card{
+    font-size: 20px !important;
+    text-align: center !important;
+}
+.icono_card{
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+.icono_card i{
+    font-size: 35px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
