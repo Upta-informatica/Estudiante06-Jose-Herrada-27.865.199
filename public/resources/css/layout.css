@@ -12290,7 +12290,7 @@ fieldset[disabled] .form-group.is-focused .form-check .form-check-label {
 }
 
 .form-check .form-check-input:checked~.form-check-sign .check {
-  background: #9c27b0;
+  background: var(--verde_os_cl);
 }
 
 .form-check .form-check-input:checked~.form-check-sign .check:before {
@@ -12507,7 +12507,7 @@ fieldset[disabled] .form-group.is-focused .form-check .form-check-label {
   height: 15px;
   width: 15px;
   border-radius: 100%;
-  background-color: #9c27b0;
+  background-color: var(--verde_os_cl);
   -webkit-transform: scale3d(0, 0, 0);
   -moz-transform: scale3d(0, 0, 0);
   -o-transform: scale3d(0, 0, 0);
@@ -12528,11 +12528,11 @@ fieldset[disabled] .form-group.is-focused .form-check .form-check-label {
 }
 
 .form-check .form-check-input:checked~.check {
-  background-color: #9c27b0;
+  background-color: var(--verde_os_cl);
 }
 
 .form-check .form-check-input:checked~.circle {
-  border-color: #9c27b0;
+  border-color: var(--verde_os_cl);
 }
 
 .form-check .form-check-input:checked .check:before {
@@ -16814,7 +16814,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .togglebutton label input[type=checkbox]:checked+.toggle:after {
-  border-color: #9c27b0;
+  border-color: var(--verde_os_cl);
 }
 
 .togglebutton label input[type=checkbox]:checked+.toggle:active:after {

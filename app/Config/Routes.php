@@ -38,6 +38,11 @@ $routes->get('/login', 'Login::Index');
 // Registro
 
 $routes->get('/registro', 'Registro::Index');
+$routes->resource('formulario_registro');
+
+// Dashboard
+
+$routes->get('/dashboard', 'Dashboard::Index');
 
 /**
  * --------------------------------------------------------------------
