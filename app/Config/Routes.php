@@ -34,6 +34,7 @@ $routes->get('/', 'Home::index');
 
 // Login
 $routes->get('/login', 'Login::Index');
+$routes->resource('formulario_login');
 
 // Registro
 
@@ -43,6 +44,21 @@ $routes->resource('formulario_registro');
 // Dashboard
 
 $routes->get('/dashboard', 'Dashboard::Index');
+$routes->get('/dashboard/citas', 'Dashboard::Citas');
+$routes->get('/dashboard/agenda_citas', 'Dashboard::Agenda_Citas');
+$routes->get('/dashboard/mascotas', 'Dashboard::Mascotas');
+$routes->get('/dashboard/doctores', 'Dashboard::Doctores');
+$routes->get('/dashboard/configuracion', 'Dashboard::Configuracion');
+$routes->get('/dashboard/notificaciones', 'Dashboard::Notificaciones');
+
+
+// Formularios dashboard
+
+$routes->post('/dashboard/citas/pedir_cita', 'Citas::Pedir_cita');
+
+// Logout
+
+$routes->get('/dashboard/logout', 'Dashboard::Logout');
 
 /**
  * --------------------------------------------------------------------

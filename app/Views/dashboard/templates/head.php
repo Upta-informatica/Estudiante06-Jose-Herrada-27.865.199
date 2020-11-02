@@ -17,6 +17,15 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   <!-- CSS Files -->
   <link href="<?= site_url('./public/resources/css/dashboard.css'); ?>" rel="stylesheet" />
+  <link href="<?= site_url('./public/resources/css/jquery-ui.css'); ?>" rel="stylesheet" />
+  <link href="<?= site_url('./public/resources/lib/datatable/dataTables.min.css'); ?>" rel="stylesheet" />
+  <link href="<?= site_url('./public/resources/lib/datatable/css/dataTables.semanticui.min.css'); ?>" rel="stylesheet" />
+  <link href="<?= site_url('./public/resources/lib/datatable/responsive/css/responsive.dataTables.min.css'); ?>" rel="stylesheet" />
+
+
+  <script src="<?= site_url('./public/resources/js/core/jquery.min.js'); ?>" type="text/javascript"></script>
+  <script src="<?= site_url('./public/resources/js/core/jquery-ui.js'); ?>" type="text/javascript"></script>
+
 </head>
 
 <body class="">

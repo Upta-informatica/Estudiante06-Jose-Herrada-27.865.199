@@ -2,16 +2,45 @@
 
 class Dashboard extends BaseController
 {
+
+    public function __construct()
+    {
+        $session = \Config\Services::session();
+        
+    }
 	public function index()
 	{
 
-        $session = \Config\Services::session();
-        
         // Control de sesion
 
        $this->control_sesion();
 
-		return view('dashboard/templates/head').view('dashboard/templates/nav').view('dashboard/templates/sidemenu').view('dashboard/index');
+		return view('dashboard/templates/head').view('dashboard/templates/nav').view('dashboard/templates/sidemenu').view('dashboard/index').view('dashboard/templates/footer');
+    }
+
+    public function citas()
+    {
+        return view('dashboard/templates/head').view('dashboard/templates/nav').view('dashboard/templates/sidemenu').view('dashboard/citas').view('dashboard/templates/footer');
+    }
+
+    public function agenda_citas()
+    {
+        return view('dashboard/templates/head').view('dashboard/templates/nav').view('dashboard/templates/sidemenu').view('dashboard/agenda_citas').view('dashboard/templates/footer');
+    }
+
+    public function mascotas()
+    {
+        return view('dashboard/templates/head').view('dashboard/templates/nav').view('dashboard/templates/sidemenu').view('dashboard/mascotas').view('dashboard/templates/footer');
+    }
+
+    public function doctores()
+    {
+        return view('dashboard/templates/head').view('dashboard/templates/nav').view('dashboard/templates/sidemenu').view('dashboard/doctores').view('dashboard/templates/footer');
+    }
+
+    public function configuracion()
+    {
+        return view('dashboard/templates/head').view('dashboard/templates/nav').view('dashboard/templates/sidemenu').view('dashboard/configuracion').view('dashboard/templates/footer');
     }
     
     public function control_sesion()
@@ -19,17 +48,27 @@ class Dashboard extends BaseController
         $session = \Config\Services::session();
         $db = \Config\Database::connect();
 
-        $token = 'a';
-        //$session->get('token')['token']
+        $tiempo = $session->get('token')['time_session'];
 
-        // Buscamos el token en bd para jwt
+        $calculo = $tiempo - time();
 
-        $jwt = $db->query("SELECT token FROM usuarios WHERE token = '$token'");
-        $jwt = $jwt->getResult();
-        
-        if (count($jwt) <= 0) {
-            redirect()->to(base_url('/login'));
-        } 
+        if ($calculo <= 0) {
+            $this->logout();
+		}
+    }
+
+    public function logout()
+    {
+        $session = \Config\Services::session();
+        $session->destroy();
+
+        $_SESSION = [];
+
+        echo '<script>
+                    alert("Sesion terminada");
+                    document.location.href = "'.base_url().'/login"; 
+                </script>';
+
     }
 
 	//--------------------------------------------------------------------

@@ -12,8 +12,28 @@ class Registro extends BaseController
 		return view('registro');
 	}
 
+	// Buscamos si ya existe la cuenta x correo
+
+	public function _exists($correo)
+	{
+		$db = \Config\Database::connect();
+
+		$find = $db->query("SELECT * FROM usuarios WHERE correo = '$correo'");
+
+		$find = $find->getResult();
+
+		if (count($find) > 0) {
+
+			echo '<script>
+                    alert("La cuenta ya exisste con ese correo");
+                    document.location.href = "'.base_url().'/login"; 
+                </script>';
+		}
+	}
+
 	public function formulario_registro()
 	{
+		$this->_exists($this->request->getPost('correo'));
 
 		$db = \Config\Database::connect();
 		$session = \Config\Services::session();
@@ -45,12 +65,25 @@ class Registro extends BaseController
 		$nombre = $datos['nombre'];
 		$apellido = $datos['apellido'];
 
+		$email = $this->request->getPost('correo');
+
+		$find = $db->query("SELECT * FROM usuarios WHERE correo = '$email'");
+
+		$id = $find->getResult()[0]->id_usuario;
+		$id_nivel = $find->getResult()[0]->tipo_usuario;
+
+		$nivel = $db->query("SELECT * FROM tipo_usuario WHERE id_tipo_usuario = '$id_nivel'");
+		$nivel = $nivel->getResult()[0]->usuario;
+
 		// Creamos la sesion 
 
 		$datos_session = [
 			'token' => $token,
+			'id' => $id,
+			'nivel' => $nivel,
 			'nombre' => $this->request->getPost('nombre'),
-			'logged_in' => true
+			'logged_in' => true,
+			'time_session' => time() + 86400
 		];
 
 		$session->set('token', $datos_session);

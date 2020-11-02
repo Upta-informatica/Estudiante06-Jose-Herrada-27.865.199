@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mx-auto">
                     <div class="card card-login">
-                        <form class="form">
+                        <form class="form" enctype='multipart/form-data' action="<?= base_url() ?>/login/formulario_login" method='post'>
                             <div class="card-header card-header-primary text-center">
                                 <h4 class="card-title">Login</h4>
                             </div>
@@ -36,7 +36,7 @@
                                             <i class="material-icons">mail</i>
                                         </span>
                                     </div>
-                                    <input type="email" class="form-control" placeholder="Email">
+                                    <input type="email" class="form-control" placeholder="Email" name='email'>
                                 </div>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
@@ -44,7 +44,7 @@
                                             <i class="material-icons">lock_outline</i>
                                         </span>
                                     </div>
-                                    <input type="password" class="form-control" placeholder="Clave" autocomplete="">
+                                    <input type="password" class="form-control" placeholder="Clave" name='clave'>
                                 </div>
                             </div>
                             <div class='centrar_texto'><a href='registro'>No tienes cuenta? Registrarse</a></div>

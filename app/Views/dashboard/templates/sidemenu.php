@@ -4,63 +4,56 @@
 
         Tip 2: you can also add an image using data-image tag
     -->
-      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Mascotas
+    <?php $nivel = $_SESSION['token']['nivel'] ?>
+      <div class="logo"><a href="#" class="simple-text logo-normal">
+          Mascotas 
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
-              <i class="material-icons">dashboard</i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./user.html">
+          <li class="nav-item <?php if($_SERVER['PATH_INFO'] == '/dashboard'): echo 'active'; endif ?> ">
+            <a class="nav-link" href="<?= base_url(); ?>/dashboard">
               <i class="material-icons">person</i>
-              <p>User Profile</p>
+              <p>Perfil</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+          <li class="nav-item <?php if($_SERVER['PATH_INFO'] == '/dashboard/citas'): echo 'active'; endif ?>">
+            <a class="nav-link" href="<?= base_url(); ?>/dashboard/citas">
+              <i class="fas fa-clipboard-list"></i>
+              <p>Citas</p>
+            </a>
+          </li>
+          <li class="nav-item <?php if($_SERVER['PATH_INFO'] == '/dashboard/agenda_citas'): echo 'active'; endif ?>">
+            <a class="nav-link" href="<?= base_url(); ?>/dashboard/agenda_citas">
+              <i class="fas fa-clipboard-list"></i>
+              <p>Agenda citas</p>
+            </a>
+          </li>
+          <?php if($nivel !='cliente'): ?>
+          <li class="nav-item <?php if($_SERVER['PATH_INFO'] == '/dashboard/mascotas'): echo 'active'; endif ?>">
+            <a class="nav-link" href="<?= base_url(); ?>/dashboard/mascotas">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>Mascotas</p>
             </a>
           </li>
+          <li class="nav-item <?php if($_SERVER['PATH_INFO'] == '/dashboard/doctores'): echo 'active'; endif ?>">
+            <a class="nav-link" href="<?= base_url(); ?>/dashboard/doctores">
+              <i class="fas fa-user-md""></i>
+              <p>Doctores</p>
+            </a>
+          </li>
+          <?php endif; ?>
+          <?php if($nivel != 'cliente' or $nivel != 'doctor'): ?>
+          <li class="nav-item <?php if($_SERVER['PATH_INFO'] == '/dashboard/configuracion'): echo 'active'; endif ?>">
+            <a class="nav-link" href="<?= base_url(); ?>/dashboard/configuracion">
+              <i class="material-icons">folder</i>
+              <p>Configuración</p>
+            </a>
+          </li>
+          <?php endif; ?>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./rtl.html">
-              <i class="material-icons">language</i>
-              <p>RTL Support</p>
-            </a>
-          </li>
-          <li class="nav-item active-pro ">
-            <a class="nav-link" href="./upgrade.html">
-              <i class="material-icons">unarchive</i>
-              <p>Upgrade to PRO</p>
+            <a class="nav-link" href="<?= base_url() ?>/dashboard/logout">
+            <i class="material-icons">person</i>
+              <p>Cerrar sesión</p>
             </a>
           </li>
         </ul>
