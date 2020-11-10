@@ -50,7 +50,7 @@ class Registro extends BaseController
 			'nombre' => $this->request->getPost('nombre'),
 			'apellido' => $this->request->getPost('apellido'),
 			'numero' => $this->request->getPost('numero'),
-			'tipo_usuario' => 1,
+			'tipo_usuario' => 2,
 			'cedula' => $this->request->getPost('cedula'),
 			'estado' => 'activo',
 			'correo' => $this->request->getPost('correo'),

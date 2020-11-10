@@ -40,6 +40,17 @@ class Citas extends BaseController
         return redirect()->to(base_url('dashboard'));
 
     }
+
+    public function borrar_cita()
+    {
+        $db = \Config\Database::connect();
+
+        $id = $_GET['id'];
+
+        $db->query("UPDATE citas SET estado = 'inactivo' WHERe id_cita = '$id'");
+
+        return redirect()->to(base_url('dashboard/agenda_citas'));
+    }
 	//--------------------------------------------------------------------
 
 }

@@ -11,12 +11,12 @@
                     $citas = $db->query("SELECT 
                     (SELECT nombre FROM datos_mascota WHERE id_dato_mascota = (SELECT id_datos_mascota FROM mascotas WHERE id_mascota = citas.id_mascota)) as mascota,
                     usuarios.nombre as doctor,
-                    usuarios.estado,
+                    citas.estado,
                     fecha_cita,
                     citas.fecha_registro,
                     citas.id_cita
                     FROM citas
-                    INNER JOIN usuarios ON usuarios.id_usuario = citas.id_doctor");
+                    INNER JOIN usuarios ON usuarios.id_usuario = citas.id_doctor WHERE citas.estado = 'activo'");
 
                     $citas = $citas->getResult();
                 ?>
@@ -65,7 +65,7 @@
                                                     <td><?= utf8_encode($c->estado) ?></td>
                                                     <td><?= $c->fecha_cita ?></td>
                                                     <td><?= $c->fecha_registro ?></td>
-                                                    <td id="archivar_<?= $c->id_cita ?>"><i class='fas fa-trash'></i></td>
+                                                    <td class='borrar' style='cursor:pointer' id="archivar_<?= $c->id_cita ?>"><i class='fas fa-trash'></i></td>
                                                 </tr>
                                             <?php $x++; endforeach ?>
                                         <?php endif ?>
@@ -81,7 +81,16 @@
         </div>
     </div>
 </div>
+<script>
 
+	$('.borrar').click(function(e) {
+		e.preventDefault();
+		var id = $(this)[0]['id'].match('[0-9]*$')[0];
+
+        document.location.href = "<?= site_url() ?>dashboard/agenda_citas/borrar_cita?id=" + id; 
+
+	});
+</script>
 <script type='text/javascript' src="<?= site_url('./public/resources/js/agenda_citas.js'); ?>"></script>
 <script type="text/javascript" src="<?= site_url('./public/resources/lib/datatable/js/jquery.dataTables.min.js') ?>"></script>
 <script type="text/javascript" src="<?= site_url('./public/resources/lib/datatable/responsive/js/dataTables.responsive.min.js') ?>"></script>

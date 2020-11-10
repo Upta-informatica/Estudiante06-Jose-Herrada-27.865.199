@@ -55,6 +55,20 @@ $routes->get('/dashboard/notificaciones', 'Dashboard::Notificaciones');
 // Formularios dashboard
 
 $routes->post('/dashboard/citas/pedir_cita', 'Citas::Pedir_cita');
+$routes->post('/dashboard/agregar_mascota', 'Home::Agregar_Mascota');
+
+$routes->get('/dashboard/editar_mascota', 'EditarMascota::Index');
+$routes->post('/dashboard/editar_mascota/editar_mascota', 'EditarMascota::editar_mascota');
+
+$routes->get('/dashboard/borrar_mascota', 'EditarMascota::borrar_mascota');
+
+$routes->get('/dashboard/agenda_citas/borrar_cita', 'Citas::borrar_cita');
+
+$routes->get('/dashboard/doctor/borrar_doctor', 'Doctores::borrar_doctor');
+$routes->get('/dashboard/doctor/editar_doctor', 'Doctores::Index');
+
+$routes->post('/dashboard/doctor/editar_doctor/editar_doctor', 'Doctores::editar_doctor');
+$routes->post('/dashboard/doctor/agregar_doctor', 'Doctores::agregar_doctor');
 
 // Logout
 

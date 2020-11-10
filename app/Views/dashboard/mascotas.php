@@ -5,7 +5,13 @@
                 <br>
                 <br>
                 <br>
+                <?php
 
+                $db = \Config\Database::connect();
+                $ma = $db->query("SELECT * FROM datos_mascota");
+
+                $ma = $ma->getResult();
+                ?>
                 <!-- Historial de mascotas registradas personal -->
 
                 <div class="main main-raised">
@@ -25,46 +31,48 @@
                                                 <div><i class="fas fa-user"></i></div> NOMBRE MASCOTA
                                             </td>
                                             <td>
-                                                <div><i class="fas fa-user-md"></i></div> DOCTOR
+                                                <div><i class="fas fa-user-md"></i></div> RAZA
                                             </td>
                                             <td>
-                                                <div><i class="fas fa-signal"></i></div> ESTADO
+                                                <div><i class="fas fa-signal"></i></div> COLOR
+                                            </td>
+                                            <td>
+                                                <div><i class="fas fa-signal"></i></div> PESO
+                                            </td>
+                                            <td>
+                                                <div><i class="fas fa-signal"></i></div> ESTATURA
+                                            </td>
+                                            <td>
+                                                <div><i class="fas fa-signal"></i></div> SEXO
+                                            </td>
+                                            <td>
+                                                <div><i class="fas fa-signal"></i></div> EDAD
+                                            </td>
+                                            <td>
+                                                <div><i class="fas fa-calendar"></i></div> FECHA NACIMIENTO
                                             </td>
                                             <td>
                                                 <div><i class="fas fa-calendar"></i></div> FECHA REGISTRO
                                             </td>
-                                            <td>
-                                                <div><i class="fas fa-pen"></i></div> MODIFICAR
-                                            </td>
-                                            <td>
-                                                <div><i class="fas fa-archive"></i></div> ARCHIVAR
-                                            </td>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                1
-                                            </td>
-                                            <td>
-                                                Pelu
-                                            </td>
-                                            <td>
-                                                Jose
-                                            </td>
-                                            <td>
-                                                Activo
-                                            </td>
-                                            <td>
-                                                31/10/2020
-                                            </td>
-                                            <td>
-                                                <a href=''><i class="fas fa-pen"></i></a>
-                                            </td>
-                                            <td>
-                                                <a href=''><i class="fas fa-archive"></i></a>
-                                            </td>
-                                        </tr>
+                                    <?php if(count($ma) > 0): ?>
+                                            <?php $x = 1; foreach($ma as $d): ?>
+                                                <tr>
+                                                    <td><?= $x ?></td>
+                                                    <td><?= utf8_encode($d->nombre) ?></td>
+                                                    <td><?= utf8_encode($d->raza) ?></td>
+                                                    <td><?= utf8_encode($d->color) ?></td>
+                                                    <td><?= utf8_encode($d->peso) ?></td>
+                                                    <td><?= utf8_encode($d->estatura) ?></td>
+                                                    <td><?= utf8_encode($d->sexo) ?></td>
+                                                    <td><?= utf8_encode($d->edad) ?></td>
+                                                    <td><?= utf8_encode($d->fecha_nacimiento) ?></td>
+                                                    <td><?= utf8_encode($d->fecha_creacion) ?></td>
+                                                </tr>
+                                            <?php $x++; endforeach ?>
+                                        <?php endif ?>
                                     </tbody>
                                 </table>
                             </div>

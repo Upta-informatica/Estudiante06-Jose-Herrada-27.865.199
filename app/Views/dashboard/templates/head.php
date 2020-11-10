@@ -7,7 +7,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Bienvenida
+    Sistema de mascota dashboard
   </title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -21,6 +21,8 @@
   <link href="<?= site_url('./public/resources/lib/datatable/dataTables.min.css'); ?>" rel="stylesheet" />
   <link href="<?= site_url('./public/resources/lib/datatable/css/dataTables.semanticui.min.css'); ?>" rel="stylesheet" />
   <link href="<?= site_url('./public/resources/lib/datatable/responsive/css/responsive.dataTables.min.css'); ?>" rel="stylesheet" />
+  <link href="<?= site_url('./public/resources/lib/datatable/buttons/css/buttons.dataTables.min.css'); ?>" rel="stylesheet" />
+  <link href="<?= site_url('./public/resources/lib/datatable/buttons/css/buttons.jqueryui.min.css'); ?>" rel="stylesheet" />
 
 
   <script src="<?= site_url('./public/resources/js/core/jquery.min.js'); ?>" type="text/javascript"></script>

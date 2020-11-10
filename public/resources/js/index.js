@@ -38,6 +38,15 @@ $(document).ready(function() {
         },
         stateSave: true,
         responsive: false,
-        "lengthChange": false
+        "lengthChange": false,
+        buttons:[
+            'pdf'
+        ]
     });
+});
+
+// Botones
+
+$('#agregar_mascota').click(function(){
+    $('#agregar_mascota_modal').modal('show');
 });
