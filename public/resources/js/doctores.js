@@ -1,5 +1,9 @@
 $(document).ready(function () {
     $('#doc').DataTable({
+        dom: 'Bfrtip',
+		buttons: [
+			'pdf', 'excel', 'copy'
+		],
         "language": {
             "sSearch": "Buscar:",
             "zeroRecords": "No se encontraron resultados",
@@ -18,9 +22,6 @@ $(document).ready(function () {
         stateSave: true,
         responsive: false,
         "lengthChange": false,
-        buttons: [
-            'pdf'
-        ]
     });
 });
 $('#agregar_doctor').click(function(){

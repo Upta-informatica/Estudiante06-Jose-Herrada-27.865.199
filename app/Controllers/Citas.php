@@ -37,6 +37,10 @@ class Citas extends BaseController
 
         $reg->insert($datos);
 
+        // bitacora
+
+		$db->query("INSERT INTO bitacora(actividad, tipo_movimiento, fecha_registro) VALUES('Solicitud de cita realizada', 'Solicitud', NOW())");
+
         return redirect()->to(base_url('dashboard'));
 
     }
@@ -48,6 +52,10 @@ class Citas extends BaseController
         $id = $_GET['id'];
 
         $db->query("UPDATE citas SET estado = 'inactivo' WHERe id_cita = '$id'");
+
+        // bitacora
+
+		$db->query("INSERT INTO bitacora(actividad, tipo_movimiento, fecha_registro) VALUES('Inhabilitar cita', 'Inhabilitar', NOW())");
 
         return redirect()->to(base_url('dashboard/agenda_citas'));
     }

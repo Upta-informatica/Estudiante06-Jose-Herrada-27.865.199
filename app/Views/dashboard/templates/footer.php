@@ -18,10 +18,7 @@
   <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
   <script src="<?= site_url('./public/resources/js/plugins/bootstrap-datetimepicker.min.js'); ?>"></script>
   <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
-  <script src="<?= site_url('./public/resources/js/plugins/jquery.dataTables.min.js'); ?>"></script>
-  <script src="<?= site_url('./public/resources/lib/datatable/buttons/js/dataTables.buttons.min.js'); ?>"></script>
-  <script src="<?= site_url('./public/resources/lib/datatable/buttons/js/buttons.jqueryui.min.js'); ?>"></script>
-  <script src="<?= site_url('./public/resources/lib/datatable/buttons/js/buttons.html5.min.js'); ?>"></script>
+
   <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
   <script src="<?= site_url('./public/resources/js/plugins/bootstrap-tagsinput.js'); ?>"></script>
   <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->

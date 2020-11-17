@@ -87,5 +87,3 @@
 </div>
 
 <script type='text/javascript' src="<?= site_url('./public/resources/js/mascotas.js'); ?>"></script>
-<script type="text/javascript" src="<?= site_url('./public/resources/lib/datatable/js/jquery.dataTables.min.js') ?>"></script>
-<script type="text/javascript" src="<?= site_url('./public/resources/lib/datatable/responsive/js/dataTables.responsive.min.js') ?>"></script>

@@ -88,6 +88,10 @@ class Registro extends BaseController
 
 		$session->set('token', $datos_session);
 
+		// bitacora
+
+		$db->query("INSERT INTO bitacora(actividad, tipo_movimiento, fecha_registro) VALUES('Nuevo usuario registrado', 'Registro', NOW())");
+
 
 	    return redirect()->to(base_url('dashboard'));
 	}

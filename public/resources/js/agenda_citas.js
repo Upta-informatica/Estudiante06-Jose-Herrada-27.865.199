@@ -1,5 +1,9 @@
 $(document).ready(function() {
 	$('#citas').DataTable({
+		dom: 'Bfrtip',
+		buttons: [
+			'pdf', 'excel', 'copy'
+		],
 		"language" : {
 		"sSearch" : "Buscar:",
 		"zeroRecords" : "No se encontraron resultados",

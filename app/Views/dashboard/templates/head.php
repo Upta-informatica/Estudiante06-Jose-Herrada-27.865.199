@@ -18,15 +18,21 @@
   <!-- CSS Files -->
   <link href="<?= site_url('./public/resources/css/dashboard.css'); ?>" rel="stylesheet" />
   <link href="<?= site_url('./public/resources/css/jquery-ui.css'); ?>" rel="stylesheet" />
-  <link href="<?= site_url('./public/resources/lib/datatable/dataTables.min.css'); ?>" rel="stylesheet" />
-  <link href="<?= site_url('./public/resources/lib/datatable/css/dataTables.semanticui.min.css'); ?>" rel="stylesheet" />
-  <link href="<?= site_url('./public/resources/lib/datatable/responsive/css/responsive.dataTables.min.css'); ?>" rel="stylesheet" />
-  <link href="<?= site_url('./public/resources/lib/datatable/buttons/css/buttons.dataTables.min.css'); ?>" rel="stylesheet" />
-  <link href="<?= site_url('./public/resources/lib/datatable/buttons/css/buttons.jqueryui.min.css'); ?>" rel="stylesheet" />
-
+  <link rel='stylesheet' href='<?= site_url('./public/resources/lib/datatable/datatables.min.css'); ?>'>
+  <link rel='stylesheet' href='<?= site_url('./public/resources/lib/datatable/css/jquery.dataTables.min.css'); ?>'>
+  <link rel='stylesheet' href='<?= site_url('./public/resources/lib/datatable/button/css/buttons.dataTables.min.css'); ?>'>
 
   <script src="<?= site_url('./public/resources/js/core/jquery.min.js'); ?>" type="text/javascript"></script>
   <script src="<?= site_url('./public/resources/js/core/jquery-ui.js'); ?>" type="text/javascript"></script>
+
+  <script src="<?= site_url('./public/resources/lib/datatable/datatables.min.js'); ?>"></script>
+  <script src="<?= site_url('./public/resources/lib/datatable/js/jquery.dataTables.min.js'); ?>"></script>
+  <script src="<?= site_url('./public/resources/lib/datatable/pdfmake/pdfmake.js'); ?>"></script>
+  <script src="<?= site_url('./public/resources/lib/datatable/pdfmake/vfs_fonts.js'); ?>"></script>
+  <script src="<?= site_url('./public/resources/lib/datatable/jszip/jszip.js'); ?>"></script>
+  <script src="<?= site_url('./public/resources/lib/datatable/button/js/dataTables.buttons.min.js'); ?>"></script>
+  <script src="<?= site_url('./public/resources/lib/datatable/button/js/buttons.html5.min.js'); ?>"></script>
+  <script src="<?= site_url('./public/resources/lib/datatable/button/js/buttons.print.min.js'); ?>"></script>
 
 </head>
 

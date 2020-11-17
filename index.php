@@ -16,8 +16,8 @@ define('FCPATH', __DIR__ . DIRECTORY_SEPARATOR);
 $pathsPath = realpath(FCPATH . './app/Config/Paths.php');
 // ^^^ Change this if you move your application folder
 
-define('ENVIRONMENT', 'development');
-//define('ENVIRONMENT', 'production');
+//define('ENVIRONMENT', 'development');
+define('ENVIRONMENT', 'production');
 /*
  *---------------------------------------------------------------
  * BOOTSTRAP THE APPLICATION

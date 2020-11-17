@@ -22,6 +22,10 @@ class Doctores extends BaseController
 
         $db->query("UPDATE doctores SET estado = 'inactivo' WHERe id_doctor = '$id'");
 
+        // bitacora
+
+		$db->query("INSERT INTO bitacora(actividad, tipo_movimiento, fecha_registro) VALUES('Inhabilitar doctor', 'Inhabilitar', NOW())");
+
         return redirect()->to(base_url('dashboard/doctores'));
     }
 
@@ -34,6 +38,10 @@ class Doctores extends BaseController
         $db->query("UPDATE doctores SET estado = '$estado' WHERE id_usuario = '$id'");
 
         $db->query("UPDATE usuarios SET nombre = '$nombre', apellido = '$apellido', correo = '$correo', numero = '$numero', cedula = '$cedula' WHERE id_usuario = '$id'");
+        
+        // bitacora
+
+		$db->query("INSERT INTO bitacora(actividad, tipo_movimiento, fecha_registro) VALUES('Edicion de doctor', 'Actualizar', NOW())");
 
         return redirect()->to(base_url('dashboard/doctores'));
 
@@ -48,6 +56,10 @@ class Doctores extends BaseController
         $db->query("UPDATE usuarios SET tipo_usuario = '3' WHERE id_usuario = '$doctor'");
 
         $db->query("INSERT INTO doctores(id_usuario, estado, fecha_creacion) VALUES('$doctor', 'activo', NOW())");
+
+        // bitacora
+
+		$db->query("INSERT INTO bitacora(actividad, tipo_movimiento, fecha_registro) VALUES('Se ha agregado nuevo usuario tipo doctor', 'Agregar', NOW())");
 
         return redirect()->to(base_url('dashboard/doctores'));
     }

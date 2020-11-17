@@ -42,6 +42,14 @@
             </a>
           </li>
           <?php endif; ?>
+          <?php if($nivel != 'cliente' AND $nivel != 'doctores'): ?>
+            <li class="nav-item <?php if($_SERVER['PATH_INFO'] == '/dashboard/configuracion'): echo 'active'; endif ?>">
+            <a class="nav-link" href="<?= base_url(); ?>/dashboard/configuracion">
+              <i class="fas fa-folder""></i>
+              <p>Panel administrativo</p>
+            </a>
+          </li>
+          <?php endif; ?>
           <li class="nav-item ">
             <a class="nav-link" href="<?= base_url() ?>/dashboard/logout">
             <i class="material-icons">person</i>
